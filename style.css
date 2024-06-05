@@ -69,7 +69,7 @@ header{
 }
 
 .cta{
-	padding: 40px;
+	padding: 40px 60px;
 	background-color: whitesmoke;
 }
 .cta-btn{
@@ -101,15 +101,19 @@ header{
 
 	border-radius: 20px;
 	box-shadow: 2px 4px 6px 1px rgba(0, 0, 0, .4);
+	transition: height 3s;
 }
 .widget-title{
 	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
 }
+.widget-content{
+	transition: height 3s;
+}
 
 .newsletter{
-	padding: 40px;
+	padding: 40px 100px;
 	background-color: whitesmoke;
 }
 .newsletter input[type="email"]{
@@ -157,6 +161,37 @@ footer ul{
 	animation-duration: .3s;
 	animation-timing-function: ease-in;
 }
+
+@keyframes key-slide-in{
+	from{
+		position: initial;
+		height: initial;
+		opacity: 0;
+	}
+	50%{
+		transform: translateY(20px);
+	}
+	to{ transform: translateY(1px);}
+}
+@keyframes key-slide-out{
+	from{ position: initial; }
+	to{
+		opacity: 0;
+		transform: translateY(-40px);
+	}
+}
+
+.slide-in{
+	animation-name: key-slide-in;
+	animation-duration: .3s;
+	animation-timing-function: ease-out;
+}
+.slide-out{
+	animation-name: key-slide-out;
+	animation-duration: .12s;
+	animation-timing-function: ease-in;
+}
+
 
 
 @media only screen and (max-width: 600px){
